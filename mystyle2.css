@@ -1,0 +1,145 @@
+.carimg{
+   display:inline-block; padding:5px;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+.container{
+
+
+  background-color:#b591ef;
+   text-align:center;
+
+ }
+
+  .container h1{
+
+	font-family:monospace;
+   color:yellow;
+
+
+
+ }
+    .button{
+
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+   }
+
+.button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+   .header{
+
+     	background:#F1F1F1;
+     	color:#fff;
+     	height:100px;
+      box-shadow: 1px 1px 1px #DCDCDC;
+      text-align: center;
+      padding-bottom: 5px;
+   }
+   .welcometext {
+     font-family: monospace;
+     color:black;
+     font-size:15;
+     float:left;
+
+   }
+
+   .header h1{
+     color:black;
+     font-family: monospace;
+   }
+
+   .footer{
+
+     	background:#a4a6a8;
+     	color:#fff;
+     	height:100px;
+      box-shadow: 1px 1px 1px #DCDCDC;
+      text-align: center;
+      padding-bottom: 5px;
+   }
+
+   .cardetails {
+     font-family: monospace;
+   }
+
+
+@media (min-width: 600px) {
+
+ .container{
+
+
+	background-color:#92baef;
+
+
+
+ }
+   .container h1{
+
+	font-family:monospace;
+
+     font-size:50px;
+     color:#c65b5b;
+
+
+ }
+   .carimg{
+   display:inline-block; padding:5px;
+    width:25%;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+   .button{
+
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+
+
+   }
+
+
+.button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+   .stage2{
+       background-color:#92baef;
+
+
+   }
+
+
+ }

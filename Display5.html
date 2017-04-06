@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Motors</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="result.json"></script>
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#showdata").click(function (event) {
+                $.getJSON('result.json', function (jd) {
+                    $('#stage').html('<p> make: ' + jd.make + '</p>');
+                    $('#stage').append('<p> model : ' + jd.model + '</p>');
+                    $('#stage').append('<p> year: ' + jd.year + '</p>');
+                });
+            });
+        });
+    </script>
+    <script>
+    function validate() {
+		//lets declare some variables and put the textbox values into them
+		var theEmail = document.forms["loginForm"]["email"].value;
+		var thePassword = document.forms["loginForm"]["password"].value;
+
+		//Now time for the validation
+		if (theEmail == "") {
+			document.forms["loginForm"]["email"].value = "Please Enter your Email";
+			document.forms["loginForm"]["email"].style.backgroundColor = "red"
+		}
+		if (thePassword == "") {
+			document.forms["loginForm"]["password"].value = "Please Enter your Email";
+			document.forms["loginForm"]["password"].style.backgroundColor = "red"
+		} else if (thePassword.length < 5) { //Take a look at W3 Schools JS String Validation
+			alert("Password is too short");
+
+		}
+
+
+	}
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+      <div class = "header">
+        <div class="welcometext">
+          <p>Welcome to Online Motors</p>
+        </div>
+      </div>
+        <h1>VW Presents</h1>
+
+        <img class="carimg" src="gti.jpg" />
+        <img class="carimg" src="gti.jpg" />
+        <img class="carimg" src="gti.jpg" />
+    <div class ="carDetails">
+    <p>Car Details:</p>
+    </div>
+    <div id="stage" class="stage2">
+
+    </div>
+    <input class="button" type="button" id="showdata" value="show car Data" />
+    <div class ="footer">
+
+    </div>
+    </div>
+</body>
+</html>

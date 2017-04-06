@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>the title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#showdata").click(function (event) {
+                $.getJSON('result.json', function (jd) {
+                    $('#stage').html('<p> make: ' + jd.make + '</p>');
+                    $('#stage').append('<p> model : ' + jd.model + '</p>');
+                    $('#stage').append('<p> year: ' + jd.year + '</p>');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>VW Presents</h1>
+
+        <img class="carimg" src="gti.jpg" />
+        <img class="carimg" src="gti.jpg" />
+            <img class="carimg" src="gti.jpg" />
+
+    <p>Car Details:</p>
+    <div id="stage" class="stage2">
+
+    </div>
+    <input class="button" type="button" id="showdata" value="show car Data" />
+        </div>
+</body>
+</html>

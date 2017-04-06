@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Merrion Hotel</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="result.json"></script>
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#showdata").click(function (event) {
+                $.getJSON('result.json', function (jd) {
+                    $('#stage').html('<p> Room: ' + jd.Room + '</p>');
+                    $('#stage').append('<p> Hotel : ' + jd.Hotel + '</p>');
+                    $('#stage').append('<p> Price: ' + jd.Price + '</p>');
+                });
+            });
+        });
+    </script>
+    <script>
+        function validate() {
+            //lets declare some variables and put the textbox values into them
+            var theEmail = document.forms["loginForm"]["email"].value;
+            var thePassword = document.forms["loginForm"]["password"].value;
+
+            //Now time for the validation
+            if (theEmail == "") {
+                document.forms["loginForm"]["email"].value = "Please Enter your Email";
+                document.forms["loginForm"]["email"].style.backgroundColor = "red"
+            }
+            if (thePassword == "") {
+                document.forms["loginForm"]["password"].value = "Please Enter your Email";
+                document.forms["loginForm"]["password"].style.backgroundColor = "red"
+            } else if (thePassword.length < 5) {
+                alert("Password is too short");
+
+            }
+
+
+        }
+        </script>
+
+</head>
+<body>
+    <script>
+
+        var x = document.getElementById("demos");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+            var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+            + latlon + "&zoom=14&size=400x300&sensor=false";
+            document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+            }
+        }
+
+    </script>
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li><a href="http://www.merrionhotel.com/?gclid=CK-kncSw_NICFYaT7QodljsEiw">Book Now</a></li>
+                <li><a href="http://www.merrionhotel.com/photo_gallery.php>Check"> Photo Galery</a></li>
+                <li><a href="http://www.merrionhotel.com/contact_us_2.php">Contact us</a></li>
+            </ul>
+            <div class="logIn">
+                <form class="register" name="loginForm">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <button onclick="validate()">Sign In</button>
+            </div>
+        </div>
+        <Header></Header>
+        <img class="merrion" src="/content/merrion.jpg" />
+        <h1></h1>
+        <img class="bedimg" src="/content/room1.jpg" />
+        <img class="bedimg" src="/content/room2.jpg" />
+
+
+        <div class="hotelDetails">
+            <p>Hotel Details:</p>
+        </div>
+        <div id="stage" class="stage2">
+        </div>
+        <input class="button" type="button" id="showdata" value="Check Cost" />
+</body>
+
+</html>
+
+<footer>
+    Merrion Hotel
+    <p id="demos">Click to find location.</p>
+    <button onclick="getLocation()">Try It</button>
+    <div id="mapholder"></div>
+
+
+</footer>
+
+
